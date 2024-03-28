@@ -1,0 +1,3 @@
+EternalGoal|Temple|Go to temple with my family|50
+SimpleGoal|spend time to learn BYU|Spend time to learn BYU around 2 hours a day|100
+SimpleGoal|Job|Get a good job|50
