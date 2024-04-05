@@ -3,46 +3,41 @@ using System.Collections.Generic;
 
 public class Report
 {
-    private DateTime startDate;
-    private DateTime endDate;
-    private List<FinancialRecord> incomeRecords;
-    private List<FinancialRecord> expenseRecords;
+    private DateTime _startDate;
+    private DateTime _endDate;
+    private List<FinancialRecord> _incomeRecords;
+    private List<FinancialRecord> _expenseRecords;
 
-    public DateTime StartDate => startDate;
-    public DateTime EndDate => endDate;
-    public List<FinancialRecord> IncomeRecords => incomeRecords;
-    public List<FinancialRecord> ExpenseRecords => expenseRecords;
-
-    public Report(DateTime startDate, DateTime endDate, List<FinancialRecord> incomeRecords, List<FinancialRecord> expenseRecords)
+    public Report(DateTime startDate, DateTime endDate)
     {
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.incomeRecords = incomeRecords;
-        this.expenseRecords = expenseRecords;
+        _startDate = startDate;
+        _endDate = endDate;
+        _incomeRecords = new List<FinancialRecord>();
+        _expenseRecords = new List<FinancialRecord>();
     }
 
     public decimal GetTotalIncome()
     {
-        decimal totalIncome = 0;
-        foreach (var record in incomeRecords)
-        {
-            totalIncome += record.Amount;
-        }
-        return totalIncome;
+        return 0;
     }
 
     public decimal GetTotalExpense()
     {
-        decimal totalExpense = 0;
-        foreach (var record in expenseRecords)
-        {
-            totalExpense += record.Amount;
-        }
-        return totalExpense;
+        return 0;
     }
 
     public decimal GetNetIncome()
     {
-        return GetTotalIncome() - GetTotalExpense();
+        return 0;
+    }
+
+    public List<FinancialRecord> GetIncomeRecords()
+    {
+        return _incomeRecords;
+    }
+
+    public List<FinancialRecord> GetExpenseRecords()
+    {
+        return _expenseRecords;
     }
 }

@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 public class UserManager
 {
-    private List<User> users;
+    private List<User> _users;
 
     public UserManager()
     {
-        users = new List<User>();
+        _users = new List<User>();
     }
 
     public void AddUser(User user)
     {
-        
+        _users.Add(user);
     }
 
-    public void RemoveUser(int userId)
+    public User GetUserByUsername(string username)
     {
-        
+        return _users.Find(u => u.GetUsername() == username);
     }
 }

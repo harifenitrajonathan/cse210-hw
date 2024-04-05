@@ -3,21 +3,20 @@ using System.Collections.Generic;
 
 public class IncomeManager
 {
-    private List<FinancialRecord> incomes;
+    private List<FinancialRecord> _incomes;
 
     public IncomeManager()
     {
-        incomes = new List<FinancialRecord>();
+        _incomes = new List<FinancialRecord>();
     }
 
     public void AddIncome(FinancialRecord income)
     {
-        // Add income logic
+        _incomes.Add(income);
     }
 
     public List<FinancialRecord> GetIncomes()
     {
-        // Get incomes logic
-        return incomes;
+        return _incomes;
     }
 }

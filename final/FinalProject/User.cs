@@ -3,53 +3,44 @@ using System.Collections.Generic;
 
 public class User
 {
-    private int userId;
-    private string username;
-    private string password;
-
-    public int UserId => userId;
+    private int _userId;
+    private string _username;
+    private string _password;
 
     public User(int userId, string username, string password)
     {
-        this.userId = userId;
-        this.username = username;
-        this.password = password;
+        _userId = userId;
+        _username = username;
+        _password = password;
+    }
+
+    public string GetUsername()
+    {
+        return _username;
     }
 
     public bool Login(string username, string password)
     {
-        return this.username == username && this.password == password;
+        return _username == username && _password == password;
     }
 
     public void Logout()
     {
-        
-    }
 
-    public void AddIncome(decimal amount, string category, DateTime date)
-    {
-        
     }
 
     public void AddExpense(decimal amount, string category, DateTime date)
     {
-        
+    
     }
 
-    public void SetBudget(string category, decimal amount)
+    public List<FinancialRecord> GetExpenses()
     {
-        
+        return new List<FinancialRecord>();
     }
 
-    public decimal GetBudget(string category)
+    public void ClearExpenses()
     {
-        
-        return 0;
-    }
-
-    public Report GenerateReport(DateTime startDate, DateTime endDate)
-    {
-        
-        return null;
+    
     }
 }

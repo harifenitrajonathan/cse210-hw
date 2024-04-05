@@ -3,21 +3,25 @@ using System.Collections.Generic;
 
 public class ExpenseManager
 {
-    private List<FinancialRecord> expenses;
+    private List<FinancialRecord> _expenses;
 
     public ExpenseManager()
     {
-        expenses = new List<FinancialRecord>();
+        _expenses = new List<FinancialRecord>();
     }
 
     public void AddExpense(FinancialRecord expense)
     {
-        // Add expense logic
+        _expenses.Add(expense);
     }
 
     public List<FinancialRecord> GetExpenses()
     {
-        // Get expenses logic
-        return expenses;
+        return _expenses;
+    }
+
+    public void ClearExpenses()
+    {
+        _expenses.Clear();
     }
 }

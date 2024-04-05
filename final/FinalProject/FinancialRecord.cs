@@ -1,49 +1,34 @@
 using System;
 using System.Collections.Generic;
 
-public abstract class FinancialRecord
+public class FinancialRecord
 {
-    private int recordId;
-    private decimal amount;
-    private string category;
-    private DateTime date;
+    private static int _nextId = 1;
+    private int _recordId;
+    private decimal _amount;
+    private string _category;
+    private DateTime _date;
 
-    public int RecordId => recordId;
-    public decimal Amount => amount;
-    public string Category => category;
-    public DateTime Date => date;
-
-    public FinancialRecord(int recordId, decimal amount, string category, DateTime date)
+    public FinancialRecord(decimal amount, string category, DateTime date)
     {
-        this.recordId = recordId;
-        this.amount = amount;
-        this.category = category;
-        this.date = date;
+        _recordId = _nextId++;
+        _amount = amount;
+        _category = category;
+        _date = date;
     }
 
-    public abstract string GetRecordType();
-}
-
-public class Income : FinancialRecord
-{
-    public Income(int recordId, decimal amount, string category, DateTime date) : base(recordId, amount, category, date)
+    public decimal GetAmount()
     {
+        return _amount;
     }
 
-    public override string GetRecordType()
+    public string GetCategory()
     {
-        return "Income";
-    }
-}
-
-public class Expense : FinancialRecord
-{
-    public Expense(int recordId, decimal amount, string category, DateTime date) : base(recordId, amount, category, date)
-    {
+        return _category;
     }
 
-    public override string GetRecordType()
+    public DateTime GetDate()
     {
-        return "Expense";
+        return _date;
     }
 }

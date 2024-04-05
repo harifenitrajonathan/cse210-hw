@@ -3,31 +3,23 @@ using System.Collections.Generic;
 
 public class AccountManager
 {
-    private Dictionary<int, User> users;
-    private User loggedInUser;
+    private List<User> _users;
+    private User _currentUser;
 
     public AccountManager()
     {
-        users = new Dictionary<int, User>();
+        _users = new List<User>();
     }
 
-    public int Register(string username, string password)
+    public void Register(string username, string password)
     {
-        return 0;
+        var user = new User(_users.Count + 1, username, password);
+        _users.Add(user);
+        _currentUser = user;
     }
 
-    public User GetUser(int userId)
+    public User GetCurrentUser()
     {
-        return null;
-    }
-
-    public Dictionary<int, User> GetAllUsers()
-    {
-        return users;
-    }
-
-    public User GetLoggedInUser()
-    {
-        return loggedInUser;
+        return _currentUser;
     }
 }
